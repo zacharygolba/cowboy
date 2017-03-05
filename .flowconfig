@@ -1,0 +1,10 @@
+[ignore]
+<PROJECT_ROOT>/dist/*
+<PROJECT_ROOT>/native/*
+<PROJECT_ROOT>/node_modules/*
+<PROJECT_ROOT>/__snapshots__/*
+
+[options]
+emoji=true
+strip_root=true
+suppress_comment=\\(.\\|\n\\)*\\$FlowIgnore

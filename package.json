@@ -1,0 +1,83 @@
+{
+  "name": "cowboy",
+  "version": "0.0.1",
+  "description": "🤠  Large refactors, made easy.",
+  "repository": "github:zacharygolba/cowboy",
+  "bin": {
+    "cowboy": "bin/cowboy"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "neon build && rollup -c",
+    "clean": "shx rm -rf coverage dist native/index.node native/target",
+    "flow": "flow check",
+    "lint": "eslint .",
+    "types": "shx rm -rf flow-typed && flow-typed install"
+  },
+  "author": "Zachary Golba <zachary.golba@postlight.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "neon-cli": "^0.1.13"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-babili": "^0.0.12",
+    "babel-preset-env": "^1.2.0",
+    "eslint": "^3.17.0",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^19.0.1",
+    "flow-bin": "^0.41.0",
+    "flow-typed": "^2.0.0",
+    "jest": "^19.0.2",
+    "jest-cli": "^19.0.2",
+    "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-json": "^2.1.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "shx": "^0.2.2"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs"
+        ]
+      }
+    },
+    "ignore": [
+      "*.json",
+      "*.node"
+    ],
+    "minified": true,
+    "plugins": [
+      "transform-flow-strip-types"
+    ],
+    "presets": [
+      "babili",
+      [
+        "env",
+        {
+          "modules": false,
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "testRegex": "\\.test\\.js$",
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "/native/",
+      "/node_modules/"
+    ]
+  }
+}

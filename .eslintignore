@@ -1,0 +1,13 @@
+# compiled output
+
+coverage/
+dist/
+
+# dependencies
+
+flow-typed/
+node_modules/
+
+# misc
+
+native/

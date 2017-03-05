@@ -1,0 +1,17 @@
+[package]
+name = "cowboy"
+version = "0.0.1"
+authors = ["Zachary Golba <zachary.golba@postlight.com>"]
+license = "MIT"
+build = "build.rs"
+
+[lib]
+name = "cowboy"
+crate-type = ["dylib"]
+
+[build-dependencies]
+neon-build = "0.1"
+
+[dependencies]
+glob = "0.2"
+neon = "0.1"
